@@ -10,22 +10,23 @@ operacion = sys.argv[1]
 arg1 = sys.argv[2]
 arg2 = sys.argv[3]
 
-try:
-	if operacion == 'suma':
-		resultado = float(arg1) + float(arg2)
-		print(str(arg1) + " + " + str(arg2) + " = " + str(resultado))
-	elif operacion == 'resta':
-		resultado = float(arg1) - float(arg2)
-		print(str(arg1) + " - " + str(arg2) + " = " + str(resultado))
-	elif operacion == 'mult':
-		resultado = float(arg1) * float(arg2)
-		print(str(arg1) + " * " + str(arg2) + " = " + str(resultado))	
-	elif operacion == 'dividir':
+
+if operacion == 'suma':
+	resultado = float(arg1) + float(arg2)
+	print(str(arg1) + " + " + str(arg2) + " = " + str(resultado))
+elif operacion == 'resta':
+	resultado = float(arg1) - float(arg2)
+	print(str(arg1) + " - " + str(arg2) + " = " + str(resultado))
+elif operacion == 'mult':
+	resultado = float(arg1) * float(arg2)
+	print(str(arg1) + " * " + str(arg2) + " = " + str(resultado))	
+elif operacion == 'dividir':
+	try:
 		resultado = float(arg1) / float(arg2)
 		print(str(arg1) + " / " + str(arg2) + " = " + str(resultado))
-	else:
-		print("Operacion ivalida, operaciones posibles: suma, resta, mult, dividir")
+	except ZeroDivisionError:
+		print("Division entre cero, no es posible")
+else:
+	print("Operacion ivalida, operaciones posibles: suma, resta, mult, dividir")
 		
-except ZeroDivisionError:
-	print("Division entre cero, no es posible")
 				
